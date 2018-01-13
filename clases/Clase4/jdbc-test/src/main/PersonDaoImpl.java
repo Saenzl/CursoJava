@@ -78,4 +78,16 @@ public class PersonDaoImpl implements PersonDao{
 		}
 	}
 
+	@Override
+	public void update(Person person) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
