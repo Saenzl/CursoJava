@@ -1,5 +1,7 @@
 package poo;
 
+import java.util.ArrayList;
+
 /*
  * POJO(Plain Old Java Object)
  */
@@ -7,22 +9,21 @@ public class Persona {
 	private String nombre;
 	private int edad;
 	private String direccion;
-	private Gato gato;
+	private ArrayList<Gato> gatos = new ArrayList<Gato>();
 
 	//Constructor sin parametros
 	public Persona(){
 		this.nombre = "Orlando";
 		this.edad = 24;
 		this.direccion = "Monterrey";
-		this.gato = new Gato("Yoshi", 3);
 	}
 
 	//Constructor parametrizado
-	Persona(String nombre, int edad, String direccion, Gato gato){
+	Persona(String nombre, int edad, String direccion, ArrayList<Gato> gatos){
 		this.nombre = nombre;
 		this.edad = edad;
 		this.direccion = direccion;
-		this.gato = gato;
+		this.gatos = gatos;
 	}
 
 	//Constructor parametrizado
@@ -48,12 +49,12 @@ public class Persona {
 		this.direccion = direccion;
 	}
 
-	public Gato getGato() {
-		return gato;
+	public ArrayList<Gato> getGatos() {
+		return gatos;
 	}
 
-	public void setGato(Gato gato) {
-		this.gato = gato;
+	public void setGatos(ArrayList<Gato> gatos) {
+		this.gatos = gatos;
 	}
 
 	/*
@@ -62,7 +63,6 @@ public class Persona {
 	@Override
 	public String toString(){
 		return "Nombre: " + this.nombre + "\nEdad: " + 
-				this.edad + "\nDireccion: " + this.direccion
-				+ "\nGato: " + this.gato.toString();
+				this.edad + "\nDireccion: " + this.direccion;
 	}
 }
