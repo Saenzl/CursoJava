@@ -1,4 +1,4 @@
-package main.calculator;
+package com.tecgurus.login.views;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -13,10 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.layouts.FlowLayoutEx;
+import com.tecgurus.login.dao.CalculatorDAO;
+import com.tecgurus.login.daoImpl.CalculatorDaoImpl;
+import com.tecgurus.login.model.Calculator;
 
-public class Calculator extends JFrame{
 
+public class CalculatorView extends JFrame{
+	
 	/**
 	 * 
 	 */
@@ -37,7 +40,7 @@ public class Calculator extends JFrame{
 	private static final int WINDOW_HEIGHT = 350;
 	
 	
-	public Calculator(){
+	public CalculatorView(){
 		super("Calculator");
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,11 +132,6 @@ public class Calculator extends JFrame{
 		container.add(opButtonsPanel);	
 	}
 	
-	public FlowLayoutEx frame(){
-		 
-		return new FlowLayoutEx();
-	}
-	
 	public ActionListener getNumbersActionListener(){
 		return new ActionListener() {
 			
@@ -186,6 +184,17 @@ public class Calculator extends JFrame{
 					
 					screen.setText("");
 					screen.setText(String.valueOf(resultValue));
+					
+					CalculatorDAO calculatorDAO = new CalculatorDaoImpl();
+					Calculator calculator = new Calculator();
+					
+					calculator.setNum1(num1);
+					calculator.setNum2(num2);
+					calculator.setOperation(operation);
+					calculator.setResult(resultValue);
+					
+					calculatorDAO.insert(calculator);
+					
 				}catch (NumberFormatException | NullPointerException ex) {
 					// TODO: handle exception
 				}
@@ -194,9 +203,4 @@ public class Calculator extends JFrame{
 	}
 
 	
-	
-	
-	
-	
-
 }

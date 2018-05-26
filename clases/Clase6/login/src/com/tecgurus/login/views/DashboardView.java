@@ -2,11 +2,15 @@ package com.tecgurus.login.views;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import com.tecgurus.login.util.SessionData;
+import com.tecgurus.login.util.UtilFunctions;
 
 public class DashboardView extends JFrame{
 
@@ -16,6 +20,8 @@ public class DashboardView extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private JLabel welcomeLbl;
+	
+	private JButton calculatorBtn;
 	
 	public DashboardView(){
 		super();
@@ -31,6 +37,17 @@ public class DashboardView extends JFrame{
 		
 		welcomeLbl = new JLabel("Hola: " + SessionData.getCurrentUser().getName()); 
 		container.add(welcomeLbl, BorderLayout.NORTH);
+		
+		calculatorBtn = new JButton("Open Calculator");
+		calculatorBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				UtilFunctions.redirect(DashboardView.this, new CalculatorView());
+			}
+		});
+		container.add(calculatorBtn);
 	}
 	
 }

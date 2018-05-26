@@ -34,7 +34,7 @@ public class LoginView extends JFrame{
 	private PasswordInput passwordIn;
 	
 	public LoginView(){
-		super();
+		super("Login");
 		setSize(350, 100);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

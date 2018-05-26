@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class FlowLayoutEx extends JFrame {
+public class FlowLayoutEx extends JFrame implements ActionListener{
 
 	/**
 	 * 
@@ -58,11 +58,17 @@ public class FlowLayoutEx extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String textStr = text.getText();
-				JOptionPane.showMessageDialog(null, "Hola " + textStr);
+				
 			}
 		});
 		container.add(button);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		String textStr = text.getText();
+		JOptionPane.showMessageDialog(null, "Hola " + textStr);
 	}
 
 	
