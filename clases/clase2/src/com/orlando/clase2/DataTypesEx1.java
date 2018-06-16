@@ -16,7 +16,7 @@ public class DataTypesEx1 {
 	//Tipo de dato de tipo entero (int) 32 bits
 	int intVal = 20;
 	//Tipo de dato de tipo enter (byte) 8 bits -128 a 127
-	byte byteVal = 127;
+	byte byteVal = 126;
 	//Tipo de dato de tipo entero (short) 16 bits
 	short shortVal = 7;
 	//Tipo de dato de tipo entero (long) 64 bits
