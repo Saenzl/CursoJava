@@ -8,7 +8,7 @@ public class UtilFunctions {
 	
 	public static void redirect(JFrame currentView, JFrame view){
 		view.setVisible(true);
-		currentView.setVisible(true);
+		currentView.setVisible(false);
 	}
 	
 	public static String hash(String message){
